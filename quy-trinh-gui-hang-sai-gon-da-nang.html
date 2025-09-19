@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Quy Trình Gửi Hàng Sài Gòn - Đà Nẵng | Vận Tải AnzEn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-step {
+            display: flex;
+            align-items: center;
+            position: relative;
+            min-height: 120px;
+        }
+        .flowchart-line::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            height: 4rem; 
+            border-left: 2px dashed #0A9396;
+            transform: translateX(-1px);
+        }
+         .flowchart-icon {
+            width: 80px;
+            height: 80px;
+            font-size: 2.5rem;
+            line-height: 80px;
+        }
+        .kpi-number {
+            font-weight: 900;
+            font-size: 4rem;
+            line-height: 1;
+            color: #EE9B00;
+        }
+        #aiResult ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        #aiResult li {
+            margin-bottom: 8px;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #FFF;
+            border-bottom-color: #EE9B00;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-[#001219]">
+
+    <header class="bg-[#005F73] text-white text-center py-12 px-4">
+        <h1 class="text-4xl md:text-5xl font-black mb-2">QUY TRÌNH GỬI HÀNG SÀI GÒN - ĐÀ NẴNG</h1>
+        <p class="text-xl md:text-2xl font-light text-[#E9D8A6]">Nhanh chóng, An toàn và Hiệu quả cùng Vận Tải AnzEn</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="kpis" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-5xl mb-3 text-[#0A9396]">⏱️</div>
+                <h3 class="text-xl font-bold mb-1">Thời Gian Siêu Tốc</h3>
+                <p class="text-gray-600">Hàng hóa đến nơi chỉ trong <span class="font-bold text-[#CA6702]">1-2 ngày</span>, đảm bảo tiến độ cho công việc của bạn.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-5xl mb-3 text-[#0A9396]">🛡️</div>
+                <h3 class="text-xl font-bold mb-1">An Toàn Tuyệt Đối</h3>
+                <p class="text-gray-600">Hợp đồng rõ ràng, chính sách bảo hiểm đầy đủ, mang lại sự an tâm cho mọi lô hàng.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-5xl mb-3 text-[#0A9396]">💰</div>
+                <h3 class="text-xl font-bold mb-1">Cước Phí Cạnh Tranh</h3>
+                <p class="text-gray-600">Mức giá tối ưu cho cả hàng lẻ và hàng số lượng lớn, giúp bạn tiết kiệm chi phí.</p>
+            </div>
+        </section>
+
+        <section id="process" class="bg-white p-6 md:p-8 rounded-lg shadow-xl mb-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-[#005F73]">5 Bước Gửi Hàng Đơn Giản</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Quy trình chuyên nghiệp được thiết kế để mang lại trải nghiệm liền mạch và không rắc rối cho khách hàng.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="flowchart-step">
+                    <div class="w-full md:w-1/2 flex flex-col items-center md:items-end md:pr-12">
+                         <div class="flowchart-icon bg-[#94D2BD] text-[#005F73] rounded-full text-center shadow-md mb-2 flowchart-line">1</div>
+                         <div class="text-center md:text-right">
+                             <h3 class="text-xl font-bold">Liên Hệ & Tư Vấn</h3>
+                             <p class="text-gray-600">Cung cấp thông tin hàng hóa qua hotline <span class="font-semibold">094.337.5959</span> để nhận tư vấn miễn phí.</p>
+                         </div>
+                    </div>
+                    <div class="hidden md:block w-1/2"></div>
+                </div>
+
+                <div class="flowchart-step">
+                    <div class="hidden md:block w-1/2"></div>
+                    <div class="w-full md:w-1/2 flex flex-col items-center md:items-start md:pl-12">
+                         <div class="flowchart-icon bg-[#94D2BD] text-[#005F73] rounded-full text-center shadow-md mb-2 flowchart-line">2</div>
+                         <div class="text-center md:text-left">
+                             <h3 class="text-xl font-bold">Báo Giá & Hợp Đồng</h3>
+                             <p class="text-gray-600">Nhận báo giá cạnh tranh và ký hợp đồng vận chuyển để đảm bảo quyền lợi.</p>
+                         </div>
+                    </div>
+                </div>
+
+                 <div class="flowchart-step">
+                    <div class="w-full md:w-1/2 flex flex-col items-center md:items-end md:pr-12">
+                         <div class="flowchart-icon bg-[#94D2BD] text-[#005F73] rounded-full text-center shadow-md mb-2 flowchart-line">3</div>
+                         <div class="text-center md:text-right">
+                             <h3 class="text-xl font-bold">Gửi Hàng Tại Sài Gòn</h3>
+                             <p class="text-gray-600">Mang hàng đến kho AnzEn hoặc yêu cầu dịch vụ lấy hàng tận nơi tiện lợi.</p>
+                         </div>
+                    </div>
+                    <div class="hidden md:block w-1/2"></div>
+                </div>
+
+                <div class="flowchart-step">
+                    <div class="hidden md:block w-1/2"></div>
+                    <div class="w-full md:w-1/2 flex flex-col items-center md:items-start md:pl-12">
+                         <div class="flowchart-icon bg-[#94D2BD] text-[#005F73] rounded-full text-center shadow-md mb-2 flowchart-line">4</div>
+                         <div class="text-center md:text-left">
+                             <h3 class="text-xl font-bold">Vận Chuyển An Toàn</h3>
+                             <p class="text-gray-600">Hàng hóa được bốc xếp cẩn thận và vận chuyển nhanh chóng ra Đà Nẵng.</p>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="flowchart-step">
+                    <div class="w-full md:w-1/2 flex flex-col items-center md:items-end md:pr-12">
+                         <div class="flowchart-icon bg-[#94D2BD] text-[#005F73] rounded-full text-center shadow-md mb-2">5</div>
+                         <div class="text-center md:text-right">
+                             <h3 class="text-xl font-bold">Nhận Hàng Tại Đà Nẵng</h3>
+                             <p class="text-gray-600">Nhận hàng tại kho hoặc được giao tận nơi theo yêu cầu của bạn.</p>
+                         </div>
+                    </div>
+                    <div class="hidden md:block w-1/2"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+             <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col">
+                 <h2 class="text-2xl font-bold text-center text-[#005F73] mb-4">Loại Hàng Hóa Vận Chuyển</h2>
+                 <p class="text-center text-gray-600 mb-6">AnzEn đáp ứng nhu cầu vận chuyển đa dạng, từ các mặt hàng nhỏ lẻ đến hàng hóa cồng kềnh, quá khổ.</p>
+                 <div class="chart-container flex-grow">
+                     <canvas id="goodsTypeChart"></canvas>
+                 </div>
+             </div>
+             <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col">
+                <h2 class="text-2xl font-bold text-center text-[#005F73] mb-4">Sự Hài Lòng Của Khách Hàng</h2>
+                 <p class="text-center text-gray-600 mb-6">Chất lượng dịch vụ luôn là ưu tiên hàng đầu, được minh chứng qua sự tin tưởng của khách hàng.</p>
+                 <div class="chart-container flex-grow">
+                     <canvas id="satisfactionChart"></canvas>
+                 </div>
+            </div>
+        </section>
+
+        <section id="options" class="bg-white p-6 md:p-8 rounded-lg shadow-xl mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#005F73]">Các Lựa Chọn Giao Nhận Linh Hoạt</h2>
+                <p class="text-gray-600 mt-2">Chúng tôi cung cấp hai phương thức chính để phù hợp nhất với nhu cầu và ngân sách của bạn.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="border-2 border-[#0A9396] rounded-lg p-6 text-center">
+                    <div class="text-5xl mb-4">🏢</div>
+                    <h3 class="text-2xl font-bold mb-2">Giao/Nhận Tại Kho</h3>
+                    <p class="text-gray-600"><span class="font-semibold">Tiết kiệm chi phí:</span> Lựa chọn tối ưu cho khách hàng có thể chủ động vận chuyển hàng đến kho của AnzEn.</p>
+                </div>
+                <div class="border-2 border-[#0A9396] rounded-lg p-6 text-center">
+                    <div class="text-5xl mb-4">🚚</div>
+                    <h3 class="text-2xl font-bold mb-2">Giao/Nhận Tận Nơi</h3>
+                    <p class="text-gray-600"><span class="font-semibold">Tiện lợi tối đa:</span> Đội xe của chúng tôi sẽ đến tận địa chỉ của bạn để lấy và giao hàng, giúp bạn tiết kiệm thời gian.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-assistant" class="bg-sky-50 p-6 md:p-8 rounded-lg shadow-xl mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#005F73]">✨ Trợ Lý Đóng Gói AI</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Không chắc chắn về cách đóng gói? Hãy mô tả hàng hóa của bạn, trợ lý AI sẽ đưa ra gợi ý!</p>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                    <input type="text" id="itemDescription" placeholder="Ví dụ: một chiếc TV 55 inch" class="w-full px-4 py-3 rounded-md border-gray-300 focus:ring-[#EE9B00] focus:border-[#EE9B00] transition shadow-sm">
+                    <button id="getPackingAdvice" class="bg-[#EE9B00] hover:bg-[#CA6702] text-[#001219] font-bold py-3 px-6 rounded-md transition-colors whitespace-nowrap shadow-sm">Nhận Tư Vấn</button>
+                </div>
+                <div id="aiResult" class="bg-white p-6 rounded-md border border-gray-200 min-h-[150px] text-left">
+                   <p class="text-gray-500">Gợi ý từ AI sẽ xuất hiện ở đây...</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#005F73] text-white text-center py-10 px-4">
+        <h2 class="text-3xl font-bold">Sẵn Sàng Gửi Hàng?</h2>
+        <p class="mt-2 mb-6 text-lg text-[#E9D8A6]">Liên hệ ngay với chúng tôi để nhận báo giá tốt nhất!</p>
+        <a href="tel:0943375959" class="bg-[#EE9B00] hover:bg-[#CA6702] text-[#001219] font-bold py-3 px-8 rounded-full text-lg transition-colors">
+            Gọi Ngay: 094.337.5959
+        </a>
+    </footer>
+
+    <script>
+        function wrapLabel(label, maxWidth) {
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + ' ' + words[i]).length > maxWidth) {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                } else {
+                    currentLine += ' ' + words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const chartColors = ['#0A9396', '#94D2BD', '#E9D8A6', '#EE9B00', '#CA6702', '#BB3E03'];
+
+        const goodsTypeCtx = document.getElementById('goodsTypeChart').getContext('2d');
+        const goodsTypeChart = new Chart(goodsTypeCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Hàng lẻ, hàng ghép', 
+                    'Hàng tiêu dùng', 
+                    ['Máy móc', 'thiết bị công nghiệp'], 
+                    'Vật liệu xây dựng', 
+                    'Nội thất, hàng gia dụng', 
+                    'Hàng quá khổ, quá tải'
+                ],
+                datasets: [{
+                    label: 'Mức độ phổ biến',
+                    data: [95, 85, 70, 75, 80, 60],
+                    backgroundColor: chartColors,
+                    borderColor: chartColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                         grid: {
+                            color: '#e0e0e0'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                             font: {
+                                size: 11
+                            }
+                        },
+                         grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const satisfactionCtx = document.getElementById('satisfactionChart').getContext('2d');
+        const satisfactionChart = new Chart(satisfactionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Rất hài lòng', 'Hài lòng', 'Khác'],
+                datasets: [{
+                    data: [85, 13, 2],
+                    backgroundColor: ['#0A9396', '#94D2BD', '#E9D8A6'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '60%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                           title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+        
+        const getAdviceButton = document.getElementById('getPackingAdvice');
+        const itemDescriptionInput = document.getElementById('itemDescription');
+        const aiResultDiv = document.getElementById('aiResult');
+        const apiKey = "";
+
+        getAdviceButton.addEventListener('click', async () => {
+            const itemDescription = itemDescriptionInput.value;
+            if (!itemDescription.trim()) {
+                aiResultDiv.innerHTML = '<p class="text-red-500">Vui lòng mô tả hàng hóa của bạn để nhận được tư vấn.</p>';
+                return;
+            }
+
+            aiResultDiv.innerHTML = '<div class="flex justify-center items-center"><div class="loader"></div></div>';
+            getAdviceButton.disabled = true;
+
+            const systemPrompt = "Bạn là một chuyên gia logistics hữu ích của Vận Tải AnzEn. Hãy đưa ra lời khuyên đóng gói hàng hóa cho khách hàng một cách ngắn gọn, thân thiện, chuyên nghiệp bằng các gạch đầu dòng. Luôn trả lời bằng tiếng Việt.";
+            const userQuery = `Tôi muốn gửi hàng từ Sài Gòn ra Đà Nẵng. Hàng của tôi là: ${itemDescription}. Hãy cho tôi lời khuyên về cách đóng gói an toàn và những lưu ý cần thiết.`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: userQuery }] }],
+                        systemInstruction: {
+                            parts: [{ text: systemPrompt }]
+                        },
+                    }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0) {
+                    let text = result.candidates[0].content.parts[0].text;
+                    text = text.replace(/\* /g, '<li>').replace(/\*\*/g, '').replace(/\n/g, '<br>');
+                    aiResultDiv.innerHTML = `<ul>${text}</ul>`;
+                } else {
+                     throw new Error('Không nhận được phản hồi hợp lệ từ AI.');
+                }
+
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                aiResultDiv.innerHTML = '<p class="text-red-500">Đã có lỗi xảy ra. Vui lòng thử lại sau.</p>';
+            } finally {
+                getAdviceButton.disabled = false;
+            }
+        });
+
+    </script>
+</body>
+</html>
+
